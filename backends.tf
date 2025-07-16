@@ -9,13 +9,13 @@
 # }
 
 
-terraform { 
-  cloud { 
+# terraform { 
+#   cloud { 
     
-    organization = "raycloudOrganization" 
+#     organization = "raycloudOrganization" 
 
-    workspaces { 
-      name = "theItern01" 
-    } 
-  } 
-}
+#     workspaces { 
+#       name = "theItern01" 
+#     } 
+#   } 
+# }

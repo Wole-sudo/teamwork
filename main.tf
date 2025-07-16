@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "us-east-1"
+  region = "us-west-2"
 }
 
 # Create VPC
@@ -11,14 +11,14 @@ resource "aws_vpc" "main" {
 resource "aws_subnet" "private" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
-  availability_zone       = "us-east-1a"
+  availability_zone       = "us-west-2a"
 }
 
 # Create Public Subnet A
 resource "aws_subnet" "public_a" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.3.0/24"
-  availability_zone       = "us-east-1a"
+  availability_zone       = "us-west-2a"
   map_public_ip_on_launch = true
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "public_a" {
 resource "aws_subnet" "public_b" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.4.0/24"
-  availability_zone       = "us-east-1b"
+  availability_zone       = "us-west-2b"
   map_public_ip_on_launch = true
 }
 
@@ -152,9 +152,9 @@ resource "aws_iam_instance_profile" "ec2_instance_profile" {
 # Launch Template
 resource "aws_launch_template" "web_lt" {
   name_prefix   = "web-template-"
-  image_id      = "ami-06aa3f7caf3a30282"  # Update with your AMI ID
+  image_id      = "ami-05f991c49d264708f"  # Update with your AMI ID
   instance_type = "t2.micro"
-  key_name = "valKP"
+  key_name = "classKP"
 
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
