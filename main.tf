@@ -154,7 +154,7 @@ resource "aws_launch_template" "web_lt" {
   name_prefix   = "web-template-"
   image_id      = "ami-05f991c49d264708f"  # Update with your AMI ID
   instance_type = "t2.micro"
-  key_name = "classKP"
+  key_name = "DeleOlaKP"
 
   vpc_security_group_ids = [aws_security_group.web_sg.id]
 
